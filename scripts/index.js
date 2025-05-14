@@ -11,32 +11,42 @@
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
     const db = firebase.database();
+const emailInput = document.getElementById("email");
+const passwordInput = document.getElementById("password");
+const statusText = document.getElementById("status");
 
-    function register() {
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-      auth.createUserWithEmailAndPassword(email, password)
-        .then(userCredential => {
-          const uid = userCredential.user.uid;
-          db.ref("users/" + uid).set({
-            email: email
-          });
-          document.getElementById("status").innerText = "Cadastrado!";
-        })
-        .catch(error => {
-          document.getElementById("status").innerText = error.message;
-        });
+function register() {
+  const email = emailInput.value;
+  const password = passwordInput.value;
+
+  auth.createUserWithEmailAndPassword(email, password)
+    .then(userCredential => {
+      const uid = userCredential.user.uid;
+      db.ref("users/" + uid).set({ email });
+      statusText.innerText = "Cadastrado!";
+    })
+    .catch(error => {
+      statusText.innerText = error.message;
+    });
+}
+
+function login() {
+  const email = emailInput.value;
+  const password = passwordInput.value;
+
+  auth.signInWithEmailAndPassword(email, password)
+    .then(() => {
+      window.location.href = "chat.html";
+    })
+    .catch(error => {
+      statusText.innerText = error.message;
+    });
+}
+
+[emailInput, passwordInput].forEach(input => {
+  input.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+      login();
     }
-
-    function login() {
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-      auth.signInWithEmailAndPassword(email, password)
-        .then(() => {
-          window.location.href = "chat.html";
-        })
-        .catch(error => {
-          document.getElementById("status").innerText = error.message;
-        });
-    }
-
+  });
+});
