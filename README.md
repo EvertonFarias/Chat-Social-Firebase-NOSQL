@@ -41,8 +41,10 @@ Chat Social é uma aplicação web que permite aos usuários se comunicarem em t
    │   ├── index.js
    │   └── chat.js
    └── css/
-       ├── index.css
-       └── chat.css
+   │   ├── index.css
+   │   └── chat.css
+   └── img/
+       └── favicon.ico
    ```
 3. Abra o arquivo `index.html` em um navegador web para começar
 
@@ -158,6 +160,8 @@ O aplicativo utiliza o sistema de autenticação do Firebase para garantir que a
 - Navegador web moderno (Chrome, Firefox, Safari, Edge)
 - Conexão com a internet
 - Arquivos CSS referenciados no projeto (css/index.css e css/chat.css)
+- Arquivos JS referenciados no projeto (scripts/index.js e css/chat.js)
+- Favicon referenciado no projeto (img/favicon.ico)
 
 ---
 
