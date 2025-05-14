@@ -1,7 +1,7 @@
 # Chat Social com Firebase
 
 Um aplicativo de chat em tempo real desenvolvido com HTML, CSS e JavaScript, utilizando o Firebase para autenticação e armazenamento de dados.
-
+- Aplicação no ar: https://evertonfarias.github.io/Chat-Social-Firebase-NOSQL/
 ## Índice
 
 - [Visão Geral](#visão-geral)
