@@ -10,6 +10,11 @@ body {
 }
 
 /* === Container === */
+abbr {
+  text-decoration: none;
+  border-bottom: none;
+}
+
 .container {
   background-color: #34495e;
   padding: 30px 40px;

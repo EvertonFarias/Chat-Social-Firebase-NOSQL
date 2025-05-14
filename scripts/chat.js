@@ -150,3 +150,11 @@ function loadUsers() {
         document.getElementById("msgInput").value = "";
       }
     }
+
+    const msgINput = document.querySelector("#msgInput");
+
+    msgINput.addEventListener('keydown', function(event) { 
+      if (event.key === 'Enter') {
+        sendMessage();
+      }
+    });
