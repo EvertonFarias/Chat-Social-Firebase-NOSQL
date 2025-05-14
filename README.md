@@ -161,4 +161,4 @@ O aplicativo utiliza o sistema de autenticação do Firebase para garantir que a
 
 ---
 
-Desenvolvido com ❤️ usando Firebase
+Desenvolvido usando Firebase
